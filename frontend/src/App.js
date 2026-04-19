@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import MapView from './MapView';
-import SummaryCards from './SummaryCards';
+import SummaryCards from './SummaryCard';
 
 function App() {
   const [activeTab, setActiveTab] = useState('map');
