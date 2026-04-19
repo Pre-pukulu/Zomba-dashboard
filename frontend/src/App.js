@@ -5,6 +5,8 @@ import SummaryCards from './SummaryCard';
 import EducationCharts from './EducationCharts';
 import HealthCharts from './HealthCharts';
 import PopulationCharts from './PopulationCharts';
+import WardExplorer from './WardExplorer';
+import AboutPage from './AboutPage';
 
 function App() {
   const [activeTab, setActiveTab] = useState('map');
@@ -14,6 +16,9 @@ function App() {
     { id: 'education',  label: '🏫 Education' },
     { id: 'health',     label: '🏥 Health' },
     { id: 'population', label: '👥 Population' },
+    { id: 'wards',      label: '🏘  Ward Explorer' },
+    { id: 'about',      label: 'ℹ️ About' }
+
   ];
 
   return (
@@ -44,6 +49,8 @@ function App() {
         {activeTab === 'education'  && <EducationCharts />}
         {activeTab === 'health'     && <HealthCharts />}
         {activeTab === 'population' && <PopulationCharts />}
+        {activeTab === 'wards'      && <WardExplorer />}
+        {activeTab === 'about'      && <AboutPage />}
       </main>
 
       <footer className="footer">
