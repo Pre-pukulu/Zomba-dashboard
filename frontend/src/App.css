@@ -185,3 +185,50 @@ body {
   border-top: 1px solid #e2e8f0;
   margin-top: 32px;
 }
+
+/* Charts */
+.charts-page { width: 100%; }
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a365d;
+  margin-bottom: 20px;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.chart-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.chart-card.wide {
+  grid-column: span 2;
+}
+
+.chart-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 16px;
+}
+
+.note {
+  font-size: 11px;
+  font-weight: 400;
+  color: #718096;
+}
+
+.chart-note {
+  font-size: 12px;
+  color: #718096;
+  margin-top: 8px;
+  text-align: center;
+}
