@@ -41,9 +41,9 @@ function App() {
 
       <main className="content">
         {activeTab === 'map' && <MapView />}
-        {activeTab === 'education'  && <div className="panel"><h2>Education charts — coming in Phase 4</h2></div>}
-        {activeTab === 'health'     && <div className="panel"><h2>Health charts — coming in Phase 4</h2></div>}
-        {activeTab === 'population' && <div className="panel"><h2>Population data — coming in Phase 4</h2></div>}
+        {activeTab === 'education'  && <EducationCharts />}
+        {activeTab === 'health'     && <HealthCharts />}
+        {activeTab === 'population' && <PopulationCharts />}
       </main>
 
       <footer className="footer">
