@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function AboutPage() {
   const team = [
-    { role: 'Developer', name: 'Your Name Here' },
+    { role: 'Developer', name: 'PRECIOUS PUKULU' },
   ];
 
   const features = [
