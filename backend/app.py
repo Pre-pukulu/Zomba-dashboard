@@ -147,6 +147,33 @@ def get_summary():
         'total_wards':       wards
     })
 
+@app.route('/api/ward/<ward_name>')
+def get_ward_summary(ward_name):
+    conn = get_db()
+    schools = conn.execute(
+        'SELECT * FROM schools WHERE ward = ?', (ward_name,)
+    ).fetchall()
+    facilities = conn.execute(
+        'SELECT * FROM health_facilities WHERE ward = ?', (ward_name,)
+    ).fetchone()
+    pop = conn.execute(
+        'SELECT * FROM population WHERE ward = ?', (ward_name,)
+    ).fetchone()
+    conn.close()
+    return jsonify({
+        'ward': ward_name,
+        'population': dict(pop) if pop else {},
+        'schools': [dict(s) for s in schools],
+        'health_facility': dict(facilities) if facilities else {},
+    })
+
+@app.route('/api/wards')
+def get_wards():
+    conn = get_db()
+    rows = conn.execute('SELECT DISTINCT ward FROM population ORDER BY ward').fetchall()
+    conn.close()
+    return jsonify([r['ward'] for r in rows])
+
 if __name__ == '__main__':
     init_db()
     app.run(host='0.0.0.0', port=5000, debug=True)
