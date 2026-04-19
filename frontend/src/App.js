@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './App.css';
 import MapView from './MapView';
 import SummaryCards from './SummaryCard';
+import EducationCharts from './EducationCharts';
+import HealthCharts from './HealthCharts';
+import PopulationCharts from './PopulationCharts';
 
 function App() {
   const [activeTab, setActiveTab] = useState('map');
