@@ -12,7 +12,7 @@ function App() {
   const [activeTab, setActiveTab] = useState('map');
 
   const tabs = [
-    { id: 'map',        label: '🗺  Map View' },
+    { id: 'map',        label: '� Overview' },
     { id: 'education',  label: '🏫 Education' },
     { id: 'health',     label: '🏥 Health' },
     { id: 'population', label: '👥 Population' },
@@ -46,7 +46,7 @@ function App() {
         </aside>
 
         <main className="content-area">
-          <SummaryCards />
+          {activeTab === 'map' && <SummaryCards />}
 
           <div className="content">
             {activeTab === 'map' && <MapView />}
