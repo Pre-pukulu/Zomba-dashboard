@@ -6,8 +6,11 @@ services:
     volumes:
       - ./frontend/src:/app/src
       - ./frontend/public:/app/public
+      - /app/node_modules
     environment:
       - REACT_APP_API_URL=http://localhost:5000
+      - CHOKIDAR_USEPOLLING=true
+    command: npm start
     depends_on:
       - backend
 
@@ -18,4 +21,10 @@ services:
     volumes:
       - ./data:/data
       - ./backend:/app
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+    command: flask run --host=0.0.0.0 --reload
     restart: unless-stopped
