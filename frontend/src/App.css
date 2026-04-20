@@ -22,10 +22,11 @@ body {
 .summary-cards {
   display: flex;
   gap: 16px;
-  padding: 20px 32px;
+  padding: 0 0 20px 0;
   background: white;
   border-bottom: 1px solid #e2e8f0;
   overflow-x: auto;
+  margin: -20px -32px 20px -32px; /* Negative margin to extend to edges */
 }
 .card {
   flex: 1;
@@ -39,33 +40,59 @@ body {
 .card-value { font-size: 22px; font-weight: 700; }
 .card-label { font-size: 11px; color: #718096; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
 
-/* Tabs */
-.tabs {
-  background: white;
-  padding: 0 32px;
+/* Main Layout */
+.main-layout {
   display: flex;
-  gap: 4px;
-  border-bottom: 2px solid #e2e8f0;
+  min-height: calc(100vh - 140px); /* Adjust based on header/footer height */
 }
-.tabs button {
-  padding: 14px 20px;
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: white;
+  border-right: 1px solid #e2e8f0;
+  padding: 20px 0;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-nav button {
+  width: 100%;
+  padding: 14px 24px;
   border: none;
   background: none;
+  text-align: left;
   cursor: pointer;
   font-size: 14px;
-  color: #718096;
-  border-bottom: 3px solid transparent;
-  margin-bottom: -2px;
-  white-space: nowrap;
+  color: #4a5568;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
 }
-.tabs button.active {
+
+.sidebar-nav button:hover {
+  background: #f7fafc;
+  color: #1a365d;
+}
+
+.sidebar-nav button.active {
+  background: #edf2f7;
   color: #1a365d;
   font-weight: 600;
-  border-bottom-color: #1a365d;
+  border-left-color: #1a365d;
+}
+
+/* Content Area */
+.content-area {
+  flex: 1;
+  padding: 20px 32px;
+  background: #f8fafc;
 }
 
 /* Content */
-.content { padding: 24px 32px; }
+.content { padding: 24px 0 0 0; }
 
 .panel {
   background: white;

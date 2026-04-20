@@ -30,28 +30,34 @@ function App() {
         </div>
       </header>
 
-      <SummaryCards />
+      <div className="main-layout">
+        <aside className="sidebar">
+          <nav className="sidebar-nav">
+            {tabs.map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={activeTab === tab.id ? 'active' : ''}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </nav>
+        </aside>
 
-      <nav className="tabs">
-        {tabs.map(tab => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={activeTab === tab.id ? 'active' : ''}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </nav>
+        <main className="content-area">
+          <SummaryCards />
 
-      <main className="content">
-        {activeTab === 'map' && <MapView />}
-        {activeTab === 'education'  && <EducationCharts />}
-        {activeTab === 'health'     && <HealthCharts />}
-        {activeTab === 'population' && <PopulationCharts />}
-        {activeTab === 'wards'      && <WardExplorer />}
-        {activeTab === 'about'      && <AboutPage />}
-      </main>
+          <div className="content">
+            {activeTab === 'map' && <MapView />}
+            {activeTab === 'education'  && <EducationCharts />}
+            {activeTab === 'health'     && <HealthCharts />}
+            {activeTab === 'population' && <PopulationCharts />}
+            {activeTab === 'wards'      && <WardExplorer />}
+            {activeTab === 'about'      && <AboutPage />}
+          </div>
+        </main>
+      </div>
 
       <footer className="footer">
         <p>Zomba District Council · Data: WorldPop, District Departments · Built with React & Flask</p>
