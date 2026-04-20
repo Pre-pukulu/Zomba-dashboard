@@ -13,10 +13,10 @@ function App() {
 
   const tabs = [
     { id: 'map',        label: '� Overview' },
-    { id: 'education',  label: '🏫 Education' },
-    { id: 'health',     label: '🏥 Health' },
-    { id: 'population', label: '👥 Population' },
-    { id: 'wards',      label: '🏘  Ward Explorer' },
+    { id: 'education',  label: '🎓 Education' },
+    { id: 'health',     label: '⚕️ Health' },
+    { id: 'population', label: '👨‍👩‍👧‍👦 Population' },
+    { id: 'wards',      label: '🏘️ Ward Explorer' },
     { id: 'about',      label: 'ℹ️ About' }
 
   ];

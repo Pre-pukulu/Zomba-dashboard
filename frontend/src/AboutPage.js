@@ -7,11 +7,11 @@ export default function AboutPage() {
 
   const features = [
     { icon: '🗺️', title: 'Interactive Map', desc: 'Visualize schools, health facilities, and population density across Zomba wards using real geographic coordinates.' },
-    { icon: '🏫', title: 'Education Analytics', desc: 'Track school enrollment, teacher ratios, and school distribution to identify areas needing educational resources.' },
-    { icon: '🏥', title: 'Health Facility Coverage', desc: 'Analyse health facility distribution, patient visits, and bed capacity across the district.' },
-    { icon: '👥', title: 'Population Intelligence', desc: 'Explore population distribution, age groups, and density powered by WorldPop spatial data.' },
+    { icon: '�', title: 'Education Analytics', desc: 'Track school enrollment, teacher ratios, and school distribution to identify areas needing educational resources.' },
+    { icon: '⚕️', title: 'Health Facility Coverage', desc: 'Analyse health facility distribution, patient visits, and bed capacity across the district.' },
+    { icon: '👨‍👩‍👧‍👦', title: 'Population Intelligence', desc: 'Explore population distribution, age groups, and density powered by WorldPop spatial data.' },
     { icon: '📊', title: 'Evidence-Based Planning', desc: 'All indicators are designed to support district planners in making data-driven resource allocation decisions.' },
-    { icon: '🐳', title: 'Modern Architecture', desc: 'Built with React, Flask, SQLite and Docker — portable, reproducible, and easy to deploy anywhere.' },
+    { icon: '🚀', title: 'Modern Architecture', desc: 'Built with React, Flask, SQLite and Docker — portable, reproducible, and easy to deploy anywhere.' },
   ];
 
   const stack = [
