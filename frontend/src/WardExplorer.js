@@ -5,13 +5,19 @@ const API = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
 export default function WardExplorer() {
   const [wards, setWards]       = useState([]);
-  const [selected, setSelected] = useState('');
+  const [selected, setSelected] = useState('Chikanda');
   const [data, setData]         = useState(null);
   const [loading, setLoading]   = useState(false);
 
   useEffect(() => {
     axios.get(`${API}/api/wards`).then(r => setWards(r.data));
   }, []);
+
+  useEffect(() => {
+    if (wards.length > 0 && !data && !loading) {
+      loadWard('Chikanda');
+    }
+  }, [wards]);
 
   function loadWard(ward) {
     setSelected(ward);
