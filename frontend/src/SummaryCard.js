@@ -15,11 +15,11 @@ export default function SummaryCards() {
   if (!summary) return null;
 
   const cards = [
-    { label: 'Total Population',   value: summary.total_population.toLocaleString(),        icon: '�‍👩‍👧‍👦', color: '#1a365d' },
-    { label: 'Total Wards',        value: summary.total_wards,                               icon: '🗺️',  color: '#276749' },
+    { label: 'Total Population',   value: summary.total_population.toLocaleString(),        icon: '👨‍👩‍👧‍👦', color: '#1a365d' },
+    { label: 'Total Wards',        value: summary.total_wards,                               icon: '🏘️',  color: '#276749' },
     { label: 'Schools',            value: summary.total_schools,                             icon: '🎓', color: '#744210' },
-    { label: 'Health Facilities',  value: summary.total_health_facilities,                   icon: '⚕️', color: '#822727' },
-    { label: 'Total Enrollment',   value: summary.total_enrollment.toLocaleString(),         icon: '📖', color: '#553c9a' },
+    { label: 'Health Facilities',  value: summary.total_health_facilities,                   icon: '🏥', color: '#822727' },
+    { label: 'Total Student Enrollment',   value: summary.total_enrollment.toLocaleString(),         icon: '📖', color: '#553c9a' },
   ];
 
   return (
