@@ -14,6 +14,11 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 .header h1 { font-size: 20px; font-weight: 700; }
 .header p  { font-size: 12px; opacity: 0.75; margin-top: 4px; }
@@ -43,7 +48,7 @@ body {
 /* Main Layout */
 .main-layout {
   display: flex;
-  min-height: calc(100vh - 140px); /* Adjust based on header/footer height */
+  min-height: 100vh;
 }
 
 /* Sidebar */
@@ -52,6 +57,12 @@ body {
   background: white;
   border-right: 1px solid #e2e8f0;
   padding: 20px 0;
+  position: fixed;
+  top: 80px; /* Below the fixed header */
+  left: 0;
+  bottom: 60px; /* Above the fixed footer */
+  overflow-y: auto;
+  z-index: 999;
 }
 
 .sidebar-nav {
@@ -89,6 +100,10 @@ body {
   flex: 1;
   padding: 20px 32px;
   background: #f8fafc;
+  margin-left: 250px; /* Account for fixed sidebar */
+  margin-top: 80px; /* Account for fixed header */
+  margin-bottom: 60px; /* Account for fixed footer */
+  min-height: calc(100vh - 140px);
 }
 
 /* Content */
@@ -211,6 +226,12 @@ body {
   color: #a0aec0;
   border-top: 1px solid #e2e8f0;
   margin-top: 32px;
+  position: fixed;
+  bottom: 0;
+  left: 250px; /* Account for fixed sidebar */
+  right: 0;
+  background: white;
+  z-index: 998;
 }
 
 /* Charts */
