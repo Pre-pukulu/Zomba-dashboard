@@ -81,6 +81,9 @@ body {
   color: #4a5568;
   border-left: 4px solid transparent;
   transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .sidebar-nav button:hover {
@@ -88,6 +91,11 @@ body {
   color: #1a365d;
 }
 
+.sidebar-nav button svg {
+  display: inline-block;
+  min-width: 18px;
+  min-height: 18px;
+}
 .sidebar-nav button.active {
   background: #edf2f7;
   color: #1a365d;
