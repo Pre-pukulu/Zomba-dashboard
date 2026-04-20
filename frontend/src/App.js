@@ -7,18 +7,19 @@ import HealthCharts from './HealthCharts';
 import PopulationCharts from './PopulationCharts';
 import WardExplorer from './WardExplorer';
 import AboutPage from './AboutPage';
+import AdminPanel from './AdminPanel';
 
 function App() {
   const [activeTab, setActiveTab] = useState('map');
 
   const tabs = [
-    { id: 'map',        label: '📊 Overview' },
-    { id: 'education',  label: '🎓 Education' },
-    { id: 'health',     label: '🏥 Health' },
-    { id: 'population', label: '👨‍👩‍👧‍👦 Population' },
-    { id: 'wards',      label: '🏘️ Ward Explorer' },
-    { id: 'about',      label: 'ℹ️ About' }
-
+    { id: 'map', label: 'Overview' },
+    { id: 'education', label: 'Education' },
+    { id: 'health', label: 'Health' },
+    { id: 'population', label: 'Population' },
+    { id: 'wards', label: 'Ward Explorer' },
+    { id: 'admin', label: 'Admin' },
+    { id: 'about', label: 'About' },
   ];
 
   return (
@@ -26,7 +27,7 @@ function App() {
       <header className="header">
         <div>
           <h1>Zomba District Intelligence Dashboard</h1>
-          <p>Integrated data platform for evidence-based district planning · Zomba, Malawi</p>
+          <p>Integrated data platform for evidence-based district planning - Zomba, Malawi</p>
         </div>
       </header>
 
@@ -50,17 +51,18 @@ function App() {
 
           <div className="content">
             {activeTab === 'map' && <MapView />}
-            {activeTab === 'education'  && <EducationCharts />}
-            {activeTab === 'health'     && <HealthCharts />}
+            {activeTab === 'education' && <EducationCharts />}
+            {activeTab === 'health' && <HealthCharts />}
             {activeTab === 'population' && <PopulationCharts />}
-            {activeTab === 'wards'      && <WardExplorer />}
-            {activeTab === 'about'      && <AboutPage />}
+            {activeTab === 'wards' && <WardExplorer />}
+            {activeTab === 'admin' && <AdminPanel />}
+            {activeTab === 'about' && <AboutPage />}
           </div>
         </main>
       </div>
 
       <footer className="footer">
-        <p>Zomba District Council · Data: WorldPop, District Departments · Built with React & Flask</p>
+        <p>Zomba District Council - Data: WorldPop, District Departments - Built with React and Flask</p>
       </footer>
     </div>
   );
