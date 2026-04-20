@@ -8,20 +8,11 @@ import PopulationCharts from './PopulationCharts';
 import WardExplorer from './WardExplorer';
 import AboutPage from './AboutPage';
 
-const OverviewIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
-    <circle cx="12" cy="12" r="9" />
-    <path d="M12 12L16 8" />
-    <path d="M12 12L8 16" />
-    <path d="M12 3A9 9 0 0 1 21 12" />
-  </svg>
-);
-
 function App() {
   const [activeTab, setActiveTab] = useState('map');
 
   const tabs = [
-    { id: 'map',        label: ' Overview' },
+    { id: 'map',        label: '📊 Overview' },
     { id: 'education',  label: '🎓 Education' },
     { id: 'health',     label: '🏥 Health' },
     { id: 'population', label: '👨‍👩‍👧‍👦 Population' },
